@@ -1,0 +1,27 @@
+#server:
+#  port: 7001
+#eureka:
+#  client:
+#  # 是否要注册到其他Eureka Server实例
+#    register-with-eureka: false
+#  #是否要从其他Eureka Server实例获取数据
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://localhost:7001/eureka/
+
+
+server:
+  port: 7001
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: ntt.com  #主机名
+    prefer-ip-address: true  #是否将当前服务的IP注册到 Eureka Server
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

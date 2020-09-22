@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: helloApplication
+server:
+  port: 8001
+# 服务注册
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+info:
+  app:
+    name: provider-hello
+    version: 1.0.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true #启用或关闭SpringBoot

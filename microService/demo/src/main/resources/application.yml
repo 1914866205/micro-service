@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+server:
+  port: 8001
+# 服务注册
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/

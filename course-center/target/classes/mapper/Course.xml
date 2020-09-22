@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soft1851.study.mapper.CourseMapper">
+
+
+
+    <select id="getCourseById" parameterType="Integer" resultType="com.soft1851.study.entity.Course">
+        SELECT *
+        FROM course
+        WHERE id = #{id}
+    </select>
+
+
+</mapper>

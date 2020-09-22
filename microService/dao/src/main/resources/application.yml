@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: daoApplication
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnide=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&allowPublicKeyRetrieval=true
+    username: ntt
+    password: .15252205596xin
+
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 10000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+    jpa:
+      database: mysql
+      show-sql: true
+      generate-ddl: true
+      database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate:
+        ddl-auto: update
+server:
+  port: 8002
+# 服务注册
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
